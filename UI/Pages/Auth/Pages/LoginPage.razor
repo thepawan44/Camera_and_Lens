@@ -1,0 +1,45 @@
+﻿@page "/login"
+<link rel="stylesheet" href="/css/login.css">
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <div class="form-group">
+            <label>Username</label>
+            <InputText @bind-Value="login.Username" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <div class="password-container">
+                <input type="@(showPassword ? "text" : "password")" @bind="login.Password" class="form-control" />
+                <Btn @onclick="TogglePasswordVisibility" class="toggle-password">
+                    @if (showPassword)
+                    {
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="material-symbols-outlined">
+                            visibility_lock
+                        </span>
+                    }
+                </Btn>
+            </div>
+        </div>
+
+        <Btn @onclick="HandleLogin" class="btn btn-primary">Login</Btn>
+
+        <div class="mt-3 text-center">
+            <span style="display: inline;">Don't have an account?</span>
+            <button @onclick="()=>Navigatetoregister()"
+                    class="btn btn-link p-0 m-0 text-primary"
+                    style="display: inline; cursor: pointer; text-decoration: none;">
+                Register
+            </button>
+        </div>
+    </div>
+</div>
+

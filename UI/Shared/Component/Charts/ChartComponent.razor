@@ -1,0 +1,28 @@
+﻿@page "/ChartComponent"
+@using UI;
+@using UI.Shared.Component.Toasts;
+@using UI.Shared.Component.Preload
+<div>
+
+    @if (Chart == "LineChart")
+    {
+        <LineChart @ref="lineChart" Style="transform: scale(0.9);" Height=height Width=width Class="my-3" />
+    }
+    else if (Chart == "BarChart")
+    {
+        <BarChart @ref="barchart" Style="transform: scale(0.9);" Height=height Width=width Class="my-3" />
+    }
+    else if (Chart == "MultipleLine")
+    {
+        <LineChart @ref="lineChart" Style="transform: scale(0.9);" Height=height Width=width Class="my-2" />
+    }
+    else if (Chart == "Pie")
+    {
+        <PieChart @ref="pieChart" Style="transform: scale(0.9);" Height=height Width=width Class="my-2" />
+    }
+    else if (Chart == "Donut")
+    {
+        <DoughnutChart @ref="donutChart" Style="transform: scale(0.9);" Height=height Width=width Class="my-2" />
+    }
+
+</div>

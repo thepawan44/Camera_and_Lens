@@ -1,0 +1,46 @@
+﻿@namespace UI
+@using UI.Shared.Component.Base
+@using UI.Shared.Component.Enums
+@inherits UIComponentBase
+
+@if (Type == ButtonType.Link)
+{
+    <a type="@buttonTypeString"
+       @ref="@ElementRef"
+       id="@ElementId"
+       class="@ClassNames"
+       style="@StyleNames"
+       @attributes="@Attributes">
+
+        @if (Loading && LoadingTemplate is not null)
+        {
+            @LoadingTemplate
+        }
+        else
+        {
+            @ChildContent
+        }
+
+    </a>
+}
+else
+{
+    <button type="@buttonTypeString"
+            @ref="@ElementRef"
+            id="@ElementId"
+            class="@ClassNames"
+            style="@StyleNames"
+            @attributes="@Attributes"
+            disabled="@disabled">
+
+        @if (Loading && LoadingTemplate is not null)
+        {
+            @LoadingTemplate
+        }
+        else
+        {
+            @ChildContent
+        }
+
+    </button>
+}

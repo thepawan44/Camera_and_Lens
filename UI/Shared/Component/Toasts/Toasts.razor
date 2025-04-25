@@ -1,0 +1,20 @@
+﻿@namespace UI
+@using UI.Shared.Component.Base
+@inherits UIComponentBase
+
+<div @ref="@ElementRef" id="@ElementId" class="@ClassNames" style="z-index:1100; @StyleNames" @attributes="@Attributes">
+    @if (Messages != null && Messages.Any())
+    {
+        foreach (var item in Messages)
+        {
+            if (string.IsNullOrWhiteSpace(item.Title))
+            {
+                <SimpleToast @key="@item" AutoHide="@(AutoHide || item.AutoHide)" Delay="@Delay" ShowCloseButton="@ShowCloseButton" ToastMessage="@item" Shown="OnToastShownAsync" Hidden="OnToastHiddenAsync"></SimpleToast>
+            }
+            else
+            {
+                <Toast @key="@item" AutoHide="@(AutoHide || item.AutoHide)" Delay="@Delay" ShowCloseButton="@ShowCloseButton" ToastMessage="@item" Shown="OnToastShownAsync" Hidden="OnToastHiddenAsync"></Toast>
+            }
+        }
+    }
+</div>

@@ -1,0 +1,7 @@
+﻿@namespace UI
+@using UI.Shared.Component.Charts
+@inherits BootstrapChart
+
+<div style="@chartContainerStyle">
+    <canvas @ref="@ElementRef" id="@ElementId" class="@ClassNames" style="@StyleNames" @attributes="@Attributes"></canvas>
+</div>

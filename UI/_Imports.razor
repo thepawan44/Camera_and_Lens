@@ -1,0 +1,25 @@
+﻿@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using UI
+@using UI.Configuration.Extension
+@using UI.Shared
+@using UI.Shared.Component.Preload
+@using UI.Shared.Component.Toasts
+
+
+@attribute [Authorize]
+@inject NavigationManager _navigationManager
+@inject AuthenticationStateProvider _authStateProvider
+@inject IAuthorizationService _authorizationService
+@inject IJSRuntime _js
+@inject ToastService _toastMessage
+@inject PreloadService _loading
+@inject CustomAuthenticationStateProvider _customAuthStateProvider
+@inject ProtectedLocalStorage _protectedLocalStorage
